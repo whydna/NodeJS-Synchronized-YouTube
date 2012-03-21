@@ -1,0 +1,78 @@
+/* Global */
+body {
+	font-family : Arial;
+	font-size : 14px;
+	margin : 0px;
+}
+
+#header {
+	height : 40px;
+	background-color : #282828;
+}
+
+#content {
+	width : 500px;
+	margin : auto;
+}
+
+#footer {
+}
+
+.clear {
+	clear : both;
+}
+
+h1 {
+	font-size : 24px;
+}
+
+h2 {
+	font-size : 20px;
+}
+
+h3 {
+	font-size : 16px;
+}
+
+#search_results > .search_result {
+	padding : 5px;
+	cursor : pointer;
+}
+
+#playlist > .playlist_item
+{
+	padding : 5px;
+}
+
+#listeners > .listener
+{
+	padding : 5px;
+}
+
+#video_container
+{
+	border : 5px solid #282828;
+	width : 100px;
+	height : 75px;
+	float : left;
+}
+
+#controls_container
+{
+	float : left;
+	padding-left : 15px;
+}
+
+#now_playing
+{
+	height : 25px;
+}
+
+#volume_slider
+{
+	width : 150px;
+	margin-top : 10px;
+	margin-bottom : 10px;
+}
+
+

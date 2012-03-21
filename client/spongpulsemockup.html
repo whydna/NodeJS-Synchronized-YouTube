@@ -1,0 +1,174 @@
+<html>
+	<head>
+		<script type="text/javascript" src="http://abj02.vpsfarm.net:8080/libs/jquery/jquery-1.5.1.min.js"></script> 
+		<script type="text/javascript" src="http://abj02.vpsfarm.net:8080/libs/jquery-ui/jquery-ui-1.8.14.custom.min.js"></script> 
+		<link type="text/css" rel="stylesheet" href="http://abj02.vpsfarm.net:8080/libs/jquery-ui/css/aristo/jquery-ui-1.8.7.custom.css"/> 
+		<style>
+			body {
+				margin: 0px;
+				font-family: arial;
+				font-size: 14px;
+			}
+
+			.clear {
+				clear: both;
+			}
+			
+			#now_playing {
+				height: 300px;
+				background-color: #111212;
+			}
+			
+			#video_wrapper {
+
+			}
+
+			#playlist {
+		
+			}
+
+			#control_bar_outer {
+				border-top: 1px solid #000000;
+				border-bottom: 1px solid #000000;
+			}
+
+			#control_bar {
+				height: 50px;
+				
+				border-top: 1px solid #333333;
+				border-bottom: 1px solid #333333;
+
+				background: #191919; /* for non-css3 browsers */
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#282828', endColorstr='#191919'); /* for IE */
+				background: -webkit-gradient(linear, left top, left bottom, from(#282828), to(#191919)); /* for webkit browsers */
+				background: -moz-linear-gradient(top,  #282828,  #191919); /* for firefox 3.6+ */ 
+			}
+
+			#controls_wrapper
+			{
+				width: 530px;
+				margin: auto;
+			}
+			
+			#controls_wrapper > #like_button {
+				float:left;
+				margin-top: 10px;
+			}
+
+			#controls_wrapper > #skip_button {
+				float:left;
+				margin-top: 10px;
+				margin-left: 15px;
+			}
+
+			#controls_wrapper > #add_song_button {
+				float:left;
+				margin-top: 10px;
+				margin-left: 15px;
+			}
+
+			#controls_wrapper > #volume_slider {
+				width:200px;
+				float:left;
+				margin-top: 20px;
+				margin-left: 25px;
+			}
+
+			#control_bar_bottom_gradient
+			{
+				height: 20px;
+
+				background: #ffffff; /* for non-css3 browsers */
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a5a5a5', endColorstr='#fcfcfc'); /* for IE */
+				background: -webkit-gradient(linear, left top, left bottom, from(#a5a5a5), to(#fcfcfc)); /* for webkit browsers */
+				background: -moz-linear-gradient(top,  #a5a5a5,  #fcfcfc); /* for firefox 3.6+ */ 
+			}
+
+			#activity_container > .song_added {
+				width: 500px;
+				margin: auto;
+				margin-top: 5px;
+				padding: 5px;
+				color: #ffffff;
+
+				background: #6d98cc; /* for non-css3 browsers */
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6d98cc', endColorstr='#497ebe'); /* for IE */
+				background: -webkit-gradient(linear, left top, left bottom, from(#6d98cc), to(#497ebe)); /* for webkit browsers */
+				background: -moz-linear-gradient(top,  #6d98cc,  #497ebe); /* for firefox 3.6+ */ 
+			}
+			#activity_container > .song_added > .user {
+				font-weight: bold;
+			}
+			#activity_container > .song_added > .title {
+				font-style: italic;
+			}
+
+			#activity_container > .chat_message {
+				width: 500px;
+				margin: auto;
+				margin-top: 5px;
+				padding: 5px;
+			}
+			#activity_container > .chat_message > .user{
+				font-weight: bold;
+				padding-right: 10px;
+			}
+			#activity_container > .chat_message > .message{
+		
+			}
+		</style>
+		<script>
+			$(document).ready(function() {
+				$('#like_button').button({
+					icons : {
+						primary : 'ui-icon-heart'
+					}
+				});
+
+				$('#skip_button').button({
+					icons : {
+						primary : 'ui-icon-seek-next'
+					}
+				});
+
+				$('#add_song_button').button({
+					icons : {
+						primary : 'ui-icon-plus'
+					}
+				});
+
+				$('#volume_slider').slider();
+			});
+		</script>
+	</head>
+	<body>
+		<div id="now_playing">
+			<div id="video_wrapper"></div>
+			<div id="playlist"></div>
+			<div class="clear"></div>
+		</div>
+
+		<div id="control_bar_outer">
+			<div id="control_bar">
+				<div id="controls_wrapper">
+					<div id="like_button">Like</div> 
+					<div id="skip_button">Skip</div>
+					<div id="add_song_button">Add Song</div>
+					<div id="volume_slider"></div>  
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="control_bar_bottom_gradient"></div>
+
+		<div id="activity_container">
+			<div class="song_added"><span class="user">Andy</span> added <span class="title">Come Together (Across the Universe)</span></div>
+			<div class="song_added"><span class="user">Phil</span> added <span class="title">Wonderwall - Oasis</span></div>
+
+			<div class="chat_message"><span class="user">Andy says:</span><span class="message">this is a great song!</span></div>
+			<div class="chat_message"><span class="user">Phil says:</span><span class="message">yes, yes it is</span></div>
+
+			<div class="song_added"><span class="user">Andy</span> added <span class="title">Happiness Is A Warm Gun (Across the Universe)</span></div>
+		</div>	
+	</body>
+</html>
