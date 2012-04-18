@@ -102,12 +102,11 @@ io.sockets.on('connection', function(socket) {
 	});
 
 	socket.on('skip', function(data) {
-		var nickname = appStatus.connectedSockets[socket.id].nickname;
 		var trackTitle = appStatus.currentTrack.title; 
 
 		nextTrack();
 		
-		io.sockets.emit('announcement', {msg : nickname + ' skipped ' + trackTitle});
+		io.sockets.emit('announcement', {msg : trackTitle + 'was skipped'});
 	});
 });
 
