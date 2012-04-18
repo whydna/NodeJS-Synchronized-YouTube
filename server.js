@@ -102,11 +102,13 @@ io.sockets.on('connection', function(socket) {
 	});
 
 	socket.on('skip', function(data) {
-		var trackTitle = appStatus.currentTrack.title; 
+		if (appStatus.currentTrack != null) {
+			var trackTitle = appStatus.currentTrack.title; 
 
-		nextTrack();
+			nextTrack();
 		
-		io.sockets.emit('announcement', {msg : trackTitle + 'was skipped'});
+			io.sockets.emit('announcement', {msg : trackTitle + 'was skipped'});
+		}
 	});
 });
 
