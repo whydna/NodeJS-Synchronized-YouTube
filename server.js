@@ -3,7 +3,8 @@ var http = require('http'),
 	path = require('path'),
 	fs = require('fs'),
 	mime = require('mime'),
-	io = require('socket.io');
+	io = require('socket.io'),
+	sanitizer = require('sanitizer');
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -73,13 +74,14 @@ io.sockets.on('connection', function(socket) {
 	});
 
 	socket.on('set_nickname', function(data) {
-		var oldNickname = appStatus.connectedSockets[socket.id].nickname;		
+		var newNickname = sanitizer.sanitize(data.nickname);
+		var oldNickname = appStatus.connectedSockets[socket.id].nickname;
 
-		appStatus.connectedSockets[socket.id].nickname = data.nickname;
+		appStatus.connectedSockets[socket.id].nickname = newNickname;
 
-		io.sockets.emit('announcement', {msg : oldNickname + ' changed their nickname to ' + data.nickname});
+		io.sockets.emit('announcement', {msg : oldNickname + ' changed their nickname to ' + newNickname});
 
-		console.log(oldNickname + ' changed their nickname to ' + data.nickname);
+		console.log(oldNickname + ' changed their nickname to ' + newNickname);
 	});
 
 	socket.on('add_to_playlist', function(data) {
